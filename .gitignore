@@ -1,0 +1,8 @@
+/node_modules
+/bundle
+.babelrc
+.DS_Store
+*.log
+.vscode
+webpack.config.js
+package-lock.json

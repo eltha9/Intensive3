@@ -1,0 +1,9 @@
+body {
+  background: blue; }
+  body div {
+    background: red;
+    color: green; }
+    body div p {
+      color: blue; }
+      body div p a {
+        color: white; }
