@@ -4,7 +4,7 @@ let bonusPosiX = new Array()
 let bonusPosiY = new Array()
 
 /* function de base*/
-//récupération des points dans le localStorage
+//récupère n'importe quel type de valeur du localStorage (int,float,array,string)
 function recupLocal(localName){
   let localValue
   localValue= localStorage.getItem(localName)
@@ -17,7 +17,7 @@ function recupLocal(localName){
   return localValue
 }
 
-//sauvegarde dans le localstorage
+//sauvegarde dans le localstorage n'importe quelle type de varriable (int,float,array,string)
 function inLocal(name,value){
 
   if(Array.isArray(value))
@@ -33,7 +33,7 @@ function inLocal(name,value){
 function createBonus(pageWidth, pageHeight, yDecalage){ // canvas height and width
   let x,y
 
-  x = Math.ceil(Math.random()*pageWidth)
+  x = Math.ceil(Math.random()*(pageWidth*2)
   y = Math.ceil(Math.random()*(pageHeight/yDecalage))
 
   return x,y
@@ -42,11 +42,3 @@ function createBonus(pageWidth, pageHeight, yDecalage){ // canvas height and wid
 
 /* main js qui fait tourner le jeu */
 playerPoint = recupLocal('playerPoint') // recherche de donnée dans le storage
-
-function main (){
-
-
-
-}
-
-const inetrval= setInterval(main, 5000);
