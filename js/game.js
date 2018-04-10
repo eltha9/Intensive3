@@ -30,11 +30,11 @@ function inLocal(name,value){
 }
 
 //création aléatoire des bonus
-function createBonus(pageWidth, pageHeight){ // canvas height and width
+function createBonus(pageWidth, pageHeight, yDecalage){ // canvas height and width
   let x,y
 
   x = Math.ceil(Math.random()*pageWidth)
-  y = Math.ceil(Math.random()*pageHeight)
+  y = Math.ceil(Math.random()*(pageHeight/yDecalage))
 
   return x,y
 }
@@ -43,7 +43,7 @@ function createBonus(pageWidth, pageHeight){ // canvas height and width
 /* main js qui fait tourner le jeu */
 playerPoint = recupLocal('playerPoint') // recherche de donnée dans le storage
 
-function main(){
+function main (){
 
 
 
