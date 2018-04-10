@@ -1,18 +1,22 @@
 //varriable
 let playerPoint
+let bonusPosiX = new Array()
+let bonusPosiY = new Array()
 
 /* function de base*/
 //récupération des points dans le localStorage
-function recuLocal(localName){
-  let localValuePoint
-  localValuePoint= localStorage.getItem(localName)
-  if(!localValues)
+function recupLocal(localName){
+  let localValue
+  localValue= localStorage.getItem(localName)
+  if(localValue)
   {
-      return 0
+      localValue = JSON.parse(localValue)
+  }else{
+    return NaN
   }
-
-  return localValuePoint
+  return localValue
 }
+
 //sauvegarde dans le localstorage
 function inLocal(name,value){
 
@@ -21,13 +25,28 @@ function inLocal(name,value){
       value = JSON.stringify(value)
       localStorage.setItem('name', value)
   }else {
-    ocalStorage.setItem('name', value)
+    localStorage.setItem('name', value)
   }
 }
+
 //création aléatoire des bonus
-function createBonus(){
+function createBonus(pageWidth, pageHeight){ // canvas height and width
+  let x,y
+
+  x = Math.ceil(Math.random()*pageWidth)
+  y = Math.ceil(Math.random()*pageHeight)
+
+  return x,y
+}
+
+
+/* main js qui fait tourner le jeu */
+playerPoint = recupLocal('playerPoint') // recherche de donnée dans le storage
+
+function main(){
+
+
 
 }
 
-/* main js qui fait tourner le jeu */
-playerPoint = recuLocal()
+const inetrval= setInterval(main, 5000);
