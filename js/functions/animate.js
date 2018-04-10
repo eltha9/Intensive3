@@ -1,32 +1,44 @@
-export default function animate(character,level) {
+import Floor from '../class/floorClass.js'
 
-    verify()
-    draw(character,level)    
-    update(character)
+let dead = false
 
-    
+export default function animate(character,level,grounds,floorType) {
+
+        verify(character,grounds)
+        draw(character,level,grounds)    
+        update(character,grounds,floorType)
 
 }
 
-function draw(character,level) {
-    character.ctx.clearRect(0,0,innerWidth,innerHeight)
+function draw(character,level,grounds) {
+    level.ctx.clearRect(0,0,innerWidth,innerHeight)
 
     level.ctx.drawImage(level.background,0,0,level.background.width,level.background.height,0,0,level.backgroundWidth,level.backgroundHeight)
 
-    level.ctx.drawImage(level.floor,0,0,level.floor.width,level.floor.height,0,level.backgroundHeight-200,level.floorWidth,level.floorHeight)
-    level.ctx.drawImage(level.floor,0,0,level.floor.width,level.floor.height,222,level.backgroundHeight-200,level.floorWidth,level.floorHeight)
-    level.ctx.drawImage(level.floor,0,0,level.floor.width,level.floor.height,222*2,level.backgroundHeight-200,level.floorWidth,level.floorHeight)
+    grounds.forEach(floor => {
 
-    character.ctx.drawImage(character.sprite,character.spriteWidth*Math.floor(character.steps),0,character.spriteWidth,character.sprite.height,character.x,character.y,character.spriteWidth,character.sprite.height)
+        floor.ctx.drawImage(floor.floor,0,0,floor.floor.width,floor.floor.height,floor.floorsX[Math.floor(floor.x)],floor.floorsY[floor.y],floor.floorWidth,floor.floorHeight)
+    })
+
+    character.ctx.drawImage(character.sprite,character.spriteWidth*Math.floor(character.steps),0,character.spriteWidth,character.sprite.height,character.x,character.charactersY[character.y],character.spriteWidth,character.sprite.height)
 }
 
-function update(character,level) {
 
-    // level.x -= 0.12
-    // if (level.x < 0) {
-    //     floor.pop(0)
-    //     floor.push()
-    // }
+function update(character,grounds,floorType) {
+
+    grounds.forEach( floor => {
+        floor.x -= 0.01
+        
+        if (floor.x < 0) {
+
+            grounds.shift()
+            grounds.push(new Floor(floorType,4,character.ctx))
+            console.log(grounds[4].x)
+            
+        }
+
+        console.log(floor.x)
+    })
 
     character.steps += 0.12
     if (character.steps > 7) {
@@ -35,6 +47,8 @@ function update(character,level) {
 
 }
 
-function verify() {
-    
+
+function verify(character,grounds) {
+
+    character.y = grounds[0].y
 }
