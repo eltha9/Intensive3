@@ -22,7 +22,8 @@ export default class Character {
         this.costCoins = costCoins
         this.costPoints = costPoints
 
-
+        this.x = 75
+        this.y = 120
 
         this.steps = 0
     }

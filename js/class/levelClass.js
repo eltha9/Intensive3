@@ -10,6 +10,9 @@ export default class Level {
         this.backgroundWidth = backgroundWidth
         this.backgroundHeight = backgroundHeight
         
+        this.blockWidth = 222
+        this.blockHeight = 200
+        
         this.block = new Image()
         this.block.src = block
         
