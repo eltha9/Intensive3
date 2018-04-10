@@ -28,16 +28,17 @@ function update(character,grounds,floorType) {
 
     grounds.forEach( floor => {
         floor.x -= 0.01
+
         
         if (floor.x < 0) {
 
             grounds.shift()
-            grounds.push(new Floor(floorType,4,character.ctx))
+            grounds.push(new Floor(floorType,5,character.ctx))
             console.log(grounds[4].x)
-            
+            console.log(grounds[3].x)
         }
 
-        console.log(floor.x)
+       
     })
 
     character.steps += 0.12
@@ -51,4 +52,14 @@ function update(character,grounds,floorType) {
 function verify(character,grounds) {
 
     character.y = grounds[0].y
+    for (let i = 0; i < grounds.length-1; i++) {
+        
+        if( grounds[i].x < grounds[i+1].x) {
+            console.log('ok')
+        }
+        else {
+            console.log('tamere')
+        }
+    }
+ 
 }

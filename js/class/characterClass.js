@@ -24,7 +24,7 @@ export default class Character {
 
         setTimeout(() => {
             this.charactersY = [275-this.sprite.height,225-this.sprite.height,175-this.sprite.height]  
-        }, 1)
+        }, 5)
 
         this.x = 75
         this.y = 0
