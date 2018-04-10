@@ -2,11 +2,11 @@
  * @param  {string} name
  * @param  {string} sprite
  * @param  {number} costCoins
- * @param  {number} costPoints 
+ * @param  {number} costPoints
  */
 
 export default class Character {
-    
+
     constructor(name,sprite,spriteWidth,costCoins,costPoints,ctx) {
 
         this.name = name
@@ -22,7 +22,7 @@ export default class Character {
         this.costCoins = costCoins
         this.costPoints = costPoints
 
-        
+
 
         this.steps = 0
     }

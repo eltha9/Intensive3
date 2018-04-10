@@ -9,6 +9,6 @@ class Level {
 
         this.block = new Image()
         this.block.src = block
-        
+
     }
 }
