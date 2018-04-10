@@ -24,9 +24,22 @@ function display() {
 
 display()
 
-function init() {
+const inGame = true
+const floor = [desert]
+function initControls() {
     
     window.addEventListener('keypress', e => {
-        
+
+        if (inGame) {
+            if (e.keyCode == 122) {
+                floor[0].y++
+                floor[0].update()
+            }
+            else if (e.keyCode == 115) {
+               
+            }
+        }
     })
 }
+
+initControls()
