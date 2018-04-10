@@ -1,5 +1,6 @@
 export default function animate(character,level) {
 
+    verify()
     draw(character,level)    
     update(character)
 
@@ -26,4 +27,8 @@ function update(character) {
         character.steps = 0
     }
 
+}
+
+function verify() {
+    
 }

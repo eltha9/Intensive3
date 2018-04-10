@@ -29,15 +29,6 @@ function inLocal(name,value){
   }
 }
 
-//création aléatoire des bonus
-function createBonus(pageWidth, pageHeight, yDecalage){ // canvas height and width
-  let x,y
-
-  x = Math.ceil(Math.random()*(pageWidth*2)
-  y = Math.ceil(Math.random()*(pageHeight/yDecalage))
-
-  return x,y
-}
 
 
 /* main js qui fait tourner le jeu */

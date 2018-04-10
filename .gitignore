@@ -4,5 +4,4 @@
 .DS_Store
 *.log
 .vscode
-webpack.config.js
 package-lock.json

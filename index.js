@@ -23,3 +23,10 @@ function display() {
 }
 
 display()
+
+function init() {
+    
+    window.addEventListener('keypress', e => {
+        
+    })
+}
