@@ -1,9 +1,21 @@
+/**
+ * @param  {string} name
+ * @param  {string} sprite
+ * @param  {number} costCoins
+ * @param  {number} costPoints 
+ */
+
 class Character {
-    constructor(name,selectionSprite,inGameSprite,costCoins,costPoints) {
+    constructor(name,sprite,costCoins,costPoints) {
+
         this.name = name
-        this.selectionSprite = selectionSprite
-        this.inGameSprite = inGameSprite
+
+        this.sprite = sprite
+
         this.costCoins = costCoins
         this.costPoints = costPoints
+
+        this.selectionWidth = 75
+        this.height = sprite.height
     }
 }
