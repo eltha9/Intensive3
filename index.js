@@ -35,7 +35,7 @@ let random =  Math.floor(Math.random()*levels.length)
 
 function display() {
     requestAnimationFrame(display)
-    Animate(nyancat, levels[random],grounds, floors[random] )
+    Animate(goku, levels[random],grounds, floors[random] )
 }
 
 
@@ -65,4 +65,4 @@ function init(character) {
     display()
 }
 
-init(nyancat)
+init(goku)
