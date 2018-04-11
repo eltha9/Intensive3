@@ -3,6 +3,11 @@ import Character from './js/class/characterClass.js'
 import Animate from './js/functions/animate.js'
 import Level from './js/class/levelClass.js'
 import Floor from './js/class/floorClass.js'
+import Music from './js/functions/music.js'
+
+let sound = document.querySelector("#playing")
+Music(sound, 'nyanCat')
+
 
 const inGame = true
 const canvas  = document.querySelector('canvas')
@@ -13,7 +18,7 @@ ctx.imageSmoothingEnabled = false
 canvas.width = 667
 canvas.height = 375
 
-self.goku = new Character('Goku', 'sprites/goku.png',51,500,500,ctx)
+self.goku = new Character('Goku', 'sprites/goku.png',75,500,500,ctx)
 self.nyancat = new Character('nyanCat', 'sprites/NYANcat-good.png',75,500,500,ctx)
 self.rayquaza = new Character('rayquaza', 'sprites/RAYQUAZA_good.png',72.67,500,500,ctx)
 self.bowser = new Character('space', 'sprites/bowser.png',75,500,500,ctx)
@@ -21,7 +26,6 @@ self.bowser = new Character('space', 'sprites/bowser.png',75,500,500,ctx)
 self.desert = new Level(0,'images/background/desert.png',canvas.width,canvas.height,ctx)
 self.desertFloor = new Floor('images/floor/floor_flappy_bird.png',0,ctx)
 
-console.log({goku,nyancat})
 
 
 const levels = [desert]
@@ -31,7 +35,7 @@ let random =  Math.floor(Math.random()*levels.length)
 
 function display() {
     requestAnimationFrame(display)
-    Animate(bowser, levels[random],grounds, floors[random] )
+    Animate(nyancat, levels[random],grounds, floors[random] )
 }
 
 
@@ -61,4 +65,4 @@ function init(character) {
     display()
 }
 
-init(bowser)
+init(nyancat)

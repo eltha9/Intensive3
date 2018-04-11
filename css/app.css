@@ -1,2 +1,17 @@
-body canvas {
-  border: 2px solid black; }
+#app {
+  width: 667px;
+  height: 350px;
+  margin: auto;
+  position: relative; }
+  #app .gameover {
+    width: calc(667px / 2);
+    height: 200px;
+    background-color: black;
+    color: red;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); }
+  #app canvas {
+    border: 2px solid black; }
