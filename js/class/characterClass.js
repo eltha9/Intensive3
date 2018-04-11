@@ -21,7 +21,7 @@ export default class Character {
 
         this.costCoins = costCoins
         this.costPoints = costPoints
-
+        this.charactersY = [275,225,175]
         setTimeout(() => {
             this.charactersY = [275-this.sprite.height,225-this.sprite.height,175-this.sprite.height]  
         }, 5)

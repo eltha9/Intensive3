@@ -4,10 +4,11 @@ let dead = false
 
 export default function animate(character,level,grounds,floorType) {
 
+    if (!dead) {
         verify(character,grounds)
         draw(character,level,grounds)    
         update(character,grounds,floorType)
-
+    }
 }
 
 function draw(character,level,grounds) {
@@ -17,30 +18,30 @@ function draw(character,level,grounds) {
 
     grounds.forEach(floor => {
 
-        floor.ctx.drawImage(floor.floor,0,0,floor.floor.width,floor.floor.height,floor.floorsX[Math.floor(floor.x)],floor.floorsY[floor.y],floor.floorWidth,floor.floorHeight)
-    })
+        // floor.ctx.drawImage(floor.floor,0,0,floor.floor.width,floor.floor.height,floor.floorsInitX[Math.floor(floor.x)],floor.floorsY[floor.y],floor.floorWidth,floor.floorHeight)
+        floor.ctx.drawImage(floor.floor,0,0,floor.floor.width,floor.floor.height,floor.transitionX,floor.floorsY[floor.y],floor.floorWidth,floor.floorHeight)
+    }) 
 
-    character.ctx.drawImage(character.sprite,character.spriteWidth*Math.floor(character.steps),0,character.spriteWidth,character.sprite.height,character.x,character.charactersY[character.y],character.spriteWidth,character.sprite.height)
+    character.ctx.drawImage(character.sprite,character.spriteWidth*Math.floor(character.steps),0,character.spriteWidth,character.sprite.height,character.x,character.charactersY[character.y],character.spriteWidth+1,character.sprite.height)
 }
 
 
 function update(character,grounds,floorType) {
 
-    grounds.forEach( floor => {
-        floor.x -= 0.01
-
-        
-        if (floor.x < 0) {
-
+    grounds.forEach( (floor,i) => {
+        floor.x -= 0.015
+        floor.transitionX -= 2.2
+    //    console.log(floor.transitionX,i)
+        if (floor.transitionX < -222 - (222-75-character.spriteWidth/2)) {
+            // console.log(floor.transitionX)
             grounds.shift()
-            grounds.push(new Floor(floorType,5,character.ctx))
-            console.log(grounds[4].x)
-            console.log(grounds[3].x)
+            grounds.push(new Floor(floorType,5,character.spriteWidth,character.ctx))
+            
         }
-
        
     })
-
+    
+    // console.log('end')
     character.steps += 0.12
     if (character.steps > 7) {
         character.steps = 0
@@ -51,15 +52,18 @@ function update(character,grounds,floorType) {
 
 function verify(character,grounds) {
 
-    character.y = grounds[0].y
-    for (let i = 0; i < grounds.length-1; i++) {
+    grounds[1].ctx.beginPath()
+    grounds[1].ctx.fillStyle = 'rgba(255, 165, 0, 0.5)'
+    grounds[1].ctx.rect(grounds[1].transitionX,grounds[1].floorsY[grounds[1].y],667/3,200)
+
+    if (grounds[1].transitionX+222 <= 75+character.spriteWidth/2) {
         
-        if( grounds[i].x < grounds[i+1].x) {
-            console.log('ok')
-        }
-        else {
-            console.log('tamere')
+        if (grounds[1].y != grounds[2].y) {
+            dead = true
         }
     }
- 
+    else {
+        character.y = grounds[1].y
+    }
 }
+
