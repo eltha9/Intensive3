@@ -7,7 +7,7 @@
 
 export default class Character {
 
-    constructor(name,sprite,spriteWidth,costCoins,costPoints,ctx) {
+    constructor(name,sprite,spriteWidth,floorSprite,costCoins,costPoints,ctx) {
 
         this.name = name
 
@@ -17,6 +17,8 @@ export default class Character {
         this.spriteWidth = spriteWidth
         this.spriteHeight = this.sprite.height
 
+        this.floorSprite = floorSprite
+        
         this.ctx = ctx
 
         this.costCoins = costCoins
