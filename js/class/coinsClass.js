@@ -6,14 +6,12 @@ export default class Coin {
 
         this.fromFloor = fromFloor
 
-        this.minX = this.fromFloor.transitionX + 40
-        this.minY = this.fromFloor.floorsY[this.fromFloor.y] - 40
+        this.minGenerationX = this.fromFloor.transitionX + 30
+        this.maxGenerationX = this.fromFloor.transitionX + this.fromFloor.floorWidths[this.fromFloor.floorWidth] - 30
 
-        this.maxX = this.fromFloor.transitionX + this.fromFloor.floorWidths[this.fromFloor.floorWidth] - 40
-        this.maxY = this.fromFloor.floorsY[this.fromFloor.floorsY.length-1] + character.spriteHeight + 40
+        this.x = Math.floor(Math.random() * (this.maxGenerationX - this.minGenerationX + 1)) + this.minGenerationX
 
-        this.x = Math.floor(Math.random() * (this.maxX - this.minX + 1)) + this.minX
-        this.y = this.fromFloor[Math.floor(Math.random() * this.fromFloor.floorsY.length)]
+        this.y = this.fromFloor.floorsY[Math.floor(Math.random()*this.fromFloor.floorsY.length)] - 30
 
         this.ctx = ctx
     }
