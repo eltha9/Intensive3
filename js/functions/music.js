@@ -1,16 +1,18 @@
+//This .js file contain the music player of the game
+
 let buttonMute = document.querySelector("#button_mute")
-let buttonPause = document.querySelector("#button_pause")
 let buttonChange = document.querySelector("#button_change")
 let sound = document.querySelector("#playing")
 
 let mute = false
 let pause = false
+// fonction du player exporter
 export default function player(audioNode, sprite = NaN){
   audioNode.play()
   audioNode.loop = true
 
 
-  //muet button
+  //mute button
   buttonMute.addEventListener("click", function(event){
     event.preventDefault()
     if(mute)
@@ -25,7 +27,7 @@ export default function player(audioNode, sprite = NaN){
   })
 
 
-  
+
 
 //   //change sound button
 //   buttonChange.addEventListener("click", function(event){
@@ -45,8 +47,3 @@ export default function player(audioNode, sprite = NaN){
 //   })
 
 }
-
-
-
-
-
