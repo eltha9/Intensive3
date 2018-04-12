@@ -9,7 +9,6 @@ export default function () {
         if (window.speed >= 9) {
             window.speed = 9
         }
-        console.log(window.speed)
         countMeter.innerHTML = meter+'m'
     },700)
 }

@@ -15,8 +15,10 @@ export default class Character {
         this.sprite.src = sprite
 
         this.spriteWidth = spriteWidth
-        this.spriteHeight = this.sprite.height
-
+        setTimeout(() => {
+            this.spriteHeight = this.sprite.height
+        }, 5)
+        
         this.floorSprite = floorSprite
         
         this.ctx = ctx
