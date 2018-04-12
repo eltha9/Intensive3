@@ -4,6 +4,7 @@ import Animate from './js/functions/animate.js'
 import Level from './js/class/levelClass.js'
 import Floor from './js/class/floorClass.js'
 import Music from './js/functions/music.js'
+import CountMeter from './js/functions/countMeter.js'
 
 let sound = document.querySelector("#playing")
 // Music(sound, 'nyanCat')
@@ -19,8 +20,8 @@ canvas.width = 667
 canvas.height = 375
 
 self.goku = new Character('Goku', 'sprites/goku.png',75,'images/floor/rainbow_floor.png',500,500,ctx)
-self.nyancat = new Character('nyanCat', 'sprites/NYANcat-good.png',75,500,500,ctx)
-self.rayquaza = new Character('rayquaza', 'sprites/RAYQUAZA_good.png',72.67,500,500,ctx)
+self.nyancat = new Character('nyanCat', 'sprites/NYANcat-good.png',75,'images/floor/rainbow_floor.png',500,500,ctx)
+self.rayquaza = new Character('rayquaza', 'sprites/RAYQUAZA_good.png',72.67,'images/floor/rainbow_floor.png',500,500,ctx)
 self.bowser = new Character('space', 'sprites/bowser.png',75,500,500,ctx)
 
 self.desert = new Level(0,'images/background/desert.png',canvas.width,canvas.height,ctx)
@@ -34,7 +35,7 @@ let random =  Math.floor(Math.random()*levels.length)
 
 function display() {
     requestAnimationFrame(display)
-    Animate(goku, levels[random],grounds, floors[random], canvas.width )
+    Animate(rayquaza, levels[random],grounds, floors[random], canvas.width )
 }
 
 
@@ -64,11 +65,6 @@ function init(character,canvasWidth) {
     })
 
 
-    console.log(grounds[0].transitionX+grounds[0].floorWidths[grounds[0].floorWidth], grounds[1].transitionX)
-    console.log(grounds[1].transitionX+grounds[1].floorWidths[grounds[1].floorWidth], grounds[2].transitionX)
-    console.log(grounds[2].transitionX+grounds[2].floorWidths[grounds[2].floorWidth], grounds[3].transitionX)
-    console.log(grounds[3].transitionX+grounds[3].floorWidths[grounds[3].floorWidth], grounds[4].transitionX)
-
     window.addEventListener('keypress', e => {
 
         if (inGame) {
@@ -87,7 +83,9 @@ function init(character,canvasWidth) {
         }
     })
 
+    window.speed = 4
     display()
+    CountMeter()
 }
 
-init(goku,canvas.width)
+init(rayquaza,canvas.width)

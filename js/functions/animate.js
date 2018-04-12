@@ -36,12 +36,15 @@ function update(character,grounds,floorType,canvasWidth) {
 
     grounds.forEach( (floor,i) => {
         floor.x -= 0.015
-        floor.transitionX -= 4
-        console.log(grounds[1].transitionX <= 75+ character.floorSprite/2)
-        if (grounds[1].transitionX <= 75+ character.floorSprite/2) {
+
+        floor.transitionX -= window.speed
+
+        if ( grounds[1].floorWidths[grounds[1].floorWidth] + grounds[1].transitionX <= 75+ character.spriteWidth/2) {
 
             grounds.shift()
+           
             grounds.push(new Floor(floorType,5,character.spriteWidth,canvasWidth,character.ctx))
+ 
             let sum = 0
             for (let i = 1; i < grounds.length-1; i++) {
                 
@@ -50,12 +53,10 @@ function update(character,grounds,floorType,canvasWidth) {
             }
             grounds[4].transitionX = sum  + 75 + character.spriteWidth/2 
             
-            // grounds[1].transitionX -= 20
         }
        
     })
     
-    // console.log('end')
     character.steps += 0.12
     if (character.steps > 7) {
         character.steps = 0
@@ -68,17 +69,15 @@ function verify(character,grounds,floorType) {
 
     grounds[1].floor.src = character.floorSprite
     grounds[0].floor.src = floorType
-    if (grounds[1].transitionX+222 <= 75+character.spriteWidth/2) {
-        
-        if (grounds[1].y != grounds[2].y) {
-            dead = true
-            // gameover.style.display = 'block'
-            pause(sound)
-        }
+    if (grounds[1].y != grounds[2].y) {
+        dead = true
+        gameover.style.display = 'block'
+        pause(sound)
     }
     else {
         character.y = grounds[1].y
     }
+            
 }
 
 //pause button
