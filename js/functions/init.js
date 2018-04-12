@@ -21,6 +21,7 @@ export default function init(character, canvasWidth,ctx) {
     // We create the first 5 floors
     window.grounds = [new Floor(Levels[1][0], 0, character.spriteWidth, canvasWidth, ctx), new Floor(Levels[1][0], 1, character.spriteWidth, canvasWidth, ctx), new Floor(Levels[1][0], 2, character.spriteWidth, canvasWidth, ctx), new Floor(Levels[1][0], 3, character.spriteWidth, canvasWidth, ctx), new Floor(Levels[1][0], 4, character.spriteWidth, canvasWidth, ctx)]
 
+    // Apply the x value of the floors
     grounds.forEach((ground, i) => {
         if (i == 0) {
             ground.transitionX = ground.floorsInitX[0]
@@ -39,6 +40,7 @@ export default function init(character, canvasWidth,ctx) {
     })
 
 
+    // Set the controls for keyboards
     window.addEventListener('keypress', e => {
 
         if (inGame) {
@@ -56,6 +58,7 @@ export default function init(character, canvasWidth,ctx) {
         }
     })
 
+    // Set the controls for the mobile
     window.addEventListener('touchstart', e => {
 
         touchStart = e.changedTouches[0].screenY
@@ -75,12 +78,14 @@ export default function init(character, canvasWidth,ctx) {
         }
     })
 
+    // Set the counters and initialize them
     window.coins = 0
     window.speed = 4
     display()
     window.countMeter = CountMeter()
 }
 
+// Function that run the game
 function display() {
 
     requestAnimationFrame(display)

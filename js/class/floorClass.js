@@ -18,7 +18,6 @@ export default class Floor {
 
     constructor(floor, x, characterWidth, canvasWidth, ctx) {
 
-        console.log(Canvas.canvasWidth)
         this.floor = new Image()
         this.floor.src = floor
 

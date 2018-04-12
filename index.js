@@ -8,8 +8,6 @@ import Characters from './js/characters/characters'
 import Init from './js/functions/init.js'
 import Canvas from './js/functions/canvas'
 
-let sound = document.querySelector("#playing")
-// Music(sound, 'nyanCat')
 
 
 // Init the game with the player character choice
