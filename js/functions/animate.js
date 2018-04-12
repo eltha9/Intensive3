@@ -69,15 +69,18 @@ function verify(character,grounds,floorType) {
 
     grounds[1].floor.src = character.floorSprite
     grounds[0].floor.src = floorType
-    if (grounds[1].y != grounds[2].y) {
-        dead = true
-        gameover.style.display = 'block'
-        pause(sound)
+    if ( grounds[1].floorWidths[grounds[1].floorWidth] + grounds[1].transitionX - window.speed <= 75+ character.spriteWidth/2) {
+
+        if (grounds[1].y != grounds[1].y) {
+            dead = true
+            gameover.style.display = 'block'
+            clearInterval(window.countMeter)
+            pause(sound)
+        }
     }
     else {
         character.y = grounds[1].y
     }
-            
 }
 
 //pause button

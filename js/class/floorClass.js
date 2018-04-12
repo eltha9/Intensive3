@@ -15,7 +15,12 @@ export default class Floor {
         this.transitionX = 0
         this.y = Math.floor(Math.random()*this.floorsY.length)
         
+        this.coins = []
         this.ctx = ctx
+    }
+
+    generateCoin() {
+
     }
 
 }

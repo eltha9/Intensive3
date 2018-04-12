@@ -19,23 +19,23 @@ ctx.imageSmoothingEnabled = false
 canvas.width = 667
 canvas.height = 375
 
-self.goku = new Character('Goku', 'sprites/goku.png',75,'images/floor/rainbow_floor.png',500,500,ctx)
-self.nyancat = new Character('nyanCat', 'sprites/NYANcat-good.png',75,'images/floor/rainbow_floor.png',500,500,ctx)
-self.rayquaza = new Character('rayquaza', 'sprites/RAYQUAZA_good.png',72.67,'images/floor/rainbow_floor.png',500,500,ctx)
-self.bowser = new Character('space', 'sprites/bowser.png',75,500,500,ctx)
+self.goku = new Character('Goku', 'sprites/goku.png',75,'images/floor/rainbowFloor.png',500,500,ctx)
+self.nyancat = new Character('nyanCat', 'sprites/NYANcat-good.png',75,'images/floor/rainbowFloor.png',500,500,ctx)
+self.rayquaza = new Character('rayquaza', 'sprites/RAYQUAZA_good.png',72.67,'images/floor/pokemonGrid.png',500,500,ctx)
 
-self.desert = new Level(0,'images/background/desert.png',canvas.width,canvas.height,ctx)
+
+self.desert = new Level(0,'images/background/mountains.png',canvas.width,canvas.height,ctx)
 
 
 
 const levels = [desert]
-const floors = ['images/floor/floor_flappy_bird.png']
+const floors = ['images/floor/gridFloor.png']
 let random =  Math.floor(Math.random()*levels.length)
 
 
 function display() {
     requestAnimationFrame(display)
-    Animate(rayquaza, levels[random],grounds, floors[random], canvas.width )
+    Animate(goku, levels[random],grounds, floors[random], canvas.width )
 }
 
 
@@ -85,7 +85,7 @@ function init(character,canvasWidth) {
 
     window.speed = 4
     display()
-    CountMeter()
+    window.countMeter = CountMeter()
 }
 
-init(rayquaza,canvas.width)
+init(goku,canvas.width)
