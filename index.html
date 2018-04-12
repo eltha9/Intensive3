@@ -1,61 +1,65 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <link rel="stylesheet" href="css/app.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <link rel="stylesheet" href="css/app.css">
+    </head>
 
-<body>
-  <button id="button_mute">mute</button>
+    <body>
+        <button id="button_mute">mute</button>
 
-  <div id="app">
-    <canvas></canvas>
-    <div class="gameover">
-      <h1>Game Over</h1>
-    </div>
-    <div class="countMeter">0m</div>
-  </div>
+        <div id="app">
+            <canvas></canvas>
+            <div class="gameover">
+                <h1>Game Over</h1>
+            </div>
+            <div class="countMeter">0m</div>
+            <div class="countCoins">
+                <img src="images/bonus/coins.png" alt="Coins's image">
+                <span>0</span>
+            </div>
+        </div>
 
-  <!-- audio playlist-->
-  <audio id="playing" class="main">
-    <source src="musique/nyanCat/nyanCat.mp3" type="audio/mp3" class="playing" />
-  </audio>
-  <!-- audio playlist-->
-  <!-- bowser audio-->
-  <audio id="audio" class="bowser">
-    <source src="musique/bowser/bowser3.mp3" type="audio/mp3" class="bowser audio" />
-  </audio>
+        <!-- audio playlist-->
+        <audio id="playing" class="main">
+            <source src="musique/nyanCat/nyanCat.mp3" type="audio/mp3" class="playing" />
+        </audio>
+        <!-- audio playlist-->
+        <!-- bowser audio-->
+        <audio id="audio" class="bowser">
+            <source src="musique/bowser/bowser3.mp3" type="audio/mp3" class="bowser audio" />
+        </audio>
 
-  <!-- goku audio-->
-  <audio id="audio" class="goku">
-    <source src="musique/goku/goku.mp3" type="audio/mp3" class="goku audio" />
-  </audio>
+        <!-- goku audio-->
+        <audio id="audio" class="goku">
+            <source src="musique/goku/goku.mp3" type="audio/mp3" class="goku audio" />
+        </audio>
 
-  <!-- nyanCat audio-->
-  <audio id="audio" class="nyanCat">
-    <source src="musique/nyanCat/nyanCat.mp3" type="audio/mp3" class="nyanCat audio" />
-  </audio>
+        <!-- nyanCat audio-->
+        <audio id="audio" class="nyanCat">
+            <source src="musique/nyanCat/nyanCat.mp3" type="audio/mp3" class="nyanCat audio" />
+        </audio>
 
-  <!-- rayquaza audio-->
-  <audio id="audio" class="rayquaza">
-    <source src="musique/rayquaza/rayquaza.mp3" type="audio/mp3" class="rayquaza audio" />
-  </audio>
+        <!-- rayquaza audio-->
+        <audio id="audio" class="rayquaza">
+            <source src="musique/rayquaza/rayquaza.mp3" type="audio/mp3" class="rayquaza audio" />
+        </audio>
 
-  <!-- spaceInvaders audio-->
-  <audio id="audio" class="space">
-    <source src="musique/space/space.mp3" type="audio/mp3" class="space audio" />
-  </audio>
+        <!-- spaceInvaders audio-->
+        <audio id="audio" class="space">
+            <source src="musique/space/space.mp3" type="audio/mp3" class="space audio" />
+        </audio>
 
-  <!--surfer audio -->
-  <audio id="audio" class="surfer">
-    <source src="musique/surfer/surfer2.mp3" type="audio/mp3" class="surfer audio" />
-  </audio>
+        <!--surfer audio -->
+        <audio id="audio" class="surfer">
+            <source src="musique/surfer/surfer2.mp3" type="audio/mp3" class="surfer audio" />
+        </audio>
 
-  <script src="bundle/bundle.js"></script>
-</body>
+        <script src="bundle/bundle.js"></script>
+    </body>
 
 </html>

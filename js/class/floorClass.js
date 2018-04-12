@@ -1,13 +1,28 @@
+// Import class
 import Coins from './coinsClass.js'
+
+// Import functions
+import Canvas from '../functions/canvas'
+
+/**
+ * Floor that basicaly makes the game
+ * @constructor
+ * @param  {string} floor - link to the sprite
+ * @param  {number} x 
+ * @param  {number} characterWidth 
+ * @param  {number} canvasWidth
+ * @param  {CanvasRenderingContext2D} ctx
+ */
 
 export default class Floor {
 
     constructor(floor, x, characterWidth, canvasWidth, ctx) {
 
+        console.log(Canvas.canvasWidth)
         this.floor = new Image()
         this.floor.src = floor
 
-        this.floorWidths = [canvasWidth / 3.5 + 5, canvasWidth / 3 + 5, canvasWidth / 2.5 + 5]
+        this.floorWidths = [Canvas.canvasWidth / 3.5 + 3, Canvas.canvasWidth / 3 + 3, Canvas.canvasWidth / 2.5 + 3]
         this.floorWidth = Math.floor(Math.random() * this.floorWidths.length)
         this.floorHeight = 200
 

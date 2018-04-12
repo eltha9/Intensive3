@@ -1,4 +1,11 @@
-export default class Level {
+/**
+ * @param  {number} id
+ * @param  {string} background - link to the background image
+ * @param  {number} backgroundWidth
+ * @param  {number} backgroundHeight
+ * @param  {CanvasRenderingContext2D} ctx
+ */
+export default class Background {
 
     constructor (id,background,backgroundWidth,backgroundHeight,ctx) {
 
