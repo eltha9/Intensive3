@@ -22,12 +22,11 @@ function draw(character, level, grounds) {
 
     grounds.forEach((floor, i) => {
 
-        // floor.ctx.drawImage(floor.floor,0,0,floor.floor.width,floor.floor.height,floor.floorsInitX[Math.floor(floor.x)],floor.floorsY[floor.y],floor.floorWidth,floor.floorHeight)
         floor.ctx.drawImage(floor.floor, 0, 0, floor.floor.width, floor.floor.height, floor.transitionX, floor.floorsY[floor.y], floor.floorWidths[floor.floorWidth], floor.floorHeight)
 
         floor.coins.forEach( coin => {
 
-            coin.ctx.drawImage(coin.sprite, 0, 0, coin.sprite.width, coin.sprite.height, coin.x, coin.y, 40, 40)
+            coin.ctx.drawImage(coin.sprite, 0, 0, coin.sprite.width, coin.sprite.height, coin.x, coin.y, 30, 30)
         })
     })
 
@@ -54,9 +53,9 @@ function update(character, grounds, floorType, canvasWidth) {
                 sum += grounds[i].floorWidths[grounds[i].floorWidth]
 
             }
-            grounds[4].transitionX = sum + 75 + character.spriteWidth / 2
+            grounds[4].transitionX = sum + grounds[1].transitionX + grounds[1].floorWidth
 
-            if (3 >= 3) {
+            if (Math.random()*6 >= 4) {
 
                 grounds[4].generateCoin('./images/bonus/coins.png',grounds[4],character,ground.ctx)
             }

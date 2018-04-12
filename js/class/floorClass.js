@@ -7,7 +7,7 @@ export default class Floor {
         this.floor = new Image()
         this.floor.src = floor
 
-        this.floorWidths = [canvasWidth / 3.5 + 2, canvasWidth / 3 + 2, canvasWidth / 2.5 + 2]
+        this.floorWidths = [canvasWidth / 3.5 + 5, canvasWidth / 3 + 5, canvasWidth / 2.5 + 5]
         this.floorWidth = Math.floor(Math.random() * this.floorWidths.length)
         this.floorHeight = 200
 
