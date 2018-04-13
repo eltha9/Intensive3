@@ -21,7 +21,8 @@ export default function gameover() {
     // Play again
     window.gameover.children[1].children[1].addEventListener('click', ()=>{
         canvas.ctx.clearRect(0,0,Canvas.canvasWidth,Canvas.canvasHeight)
+        clearInterval(window.countMeter)
         Init(Characters[window.choosenCharacter], Canvas.canvasWidth, Canvas.ctx)
-
+        window.gameover.style.display = 'none'
     })
 }

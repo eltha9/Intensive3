@@ -17,6 +17,8 @@ export default function () {
         meter++
         window.speed += 0.02
 
+        console.log(meter)
+        console.log(window.speed)
         // Cap the speed to 9
         if (window.speed >= 9) {
             window.speed = 9

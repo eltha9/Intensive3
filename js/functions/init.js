@@ -18,6 +18,7 @@ window.random = Math.floor(Math.random() * Levels[0].length)
 
 export default function init(character, canvasWidth,ctx) {
 
+    window.grounds = []
     // We create the first 5 floors
     window.grounds = [new Floor(Levels[1][0], 0, character.spriteWidth, canvasWidth, ctx), new Floor(Levels[1][0], 1, character.spriteWidth, canvasWidth, ctx), new Floor(Levels[1][0], 2, character.spriteWidth, canvasWidth, ctx), new Floor(Levels[1][0], 3, character.spriteWidth, canvasWidth, ctx), new Floor(Levels[1][0], 4, character.spriteWidth, canvasWidth, ctx)]
 
@@ -85,13 +86,16 @@ export default function init(character, canvasWidth,ctx) {
     window.music = document.querySelector('.'+Characters[window.choosenCharacter].name)
     display()
     Music(window.music)
+    clearInterval(window.countMeter)
     window.countMeter = CountMeter()
+    console.log(grounds)
 }
 
 // Function that run the game
 function display() {
 
-    requestAnimationFrame(display)
-
-    Animate(Characters[window.choosenCharacter], Levels[0][random], grounds, Levels[1][0], window.canvasWidth)
+    if (!window.dead) {
+        requestAnimationFrame(display)
+        Animate(Characters[window.choosenCharacter], Levels[0][random], grounds, Levels[1][0], window.canvasWidth)    
+    }
 }
