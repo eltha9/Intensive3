@@ -1,19 +1,19 @@
 // Import of classes
 import Floor from '../class/floorClass.js'
 
+//Import functions
+import GameOver from './gameover'
 
 // Variables relative to the function
-const gameover = document.querySelector('.gameover')
+window.gameover = document.querySelector('.gameover')
 gameover.style.display = 'none'
 
 const coinsCount = document.querySelector('.countCoins span')
 
-let dead = false
-
 
 export default function animate(character, background, grounds, floorType, canvasWidth) {
 
-    if (!dead) {
+    if (!window.dead) {
 
         // 3 functions that make animate works
         verify(character, grounds, floorType)
@@ -116,11 +116,8 @@ function verify(character, grounds, floorType) {
     // Else it allow to move the character with the floor
     if (grounds[1].floorWidths[grounds[1].floorWidth] + grounds[1].transitionX - window.speed <= 75 + character.spriteWidth / 2) {
 
-        if (grounds[1].y != grounds[1].y) {
-            dead = true
-            gameover.style.display = 'block'
-            clearInterval(window.countMeter)
-            pause(sound)
+        if (grounds[1].y != grounds[2].y) {
+            GameOver()
         }
     } else {
         character.y = grounds[1].y
@@ -128,9 +125,5 @@ function verify(character, grounds, floorType) {
     }
 }
 
-//pause button
-function pause(audioNode) {
-    audioNode.pause()
-}
 
-let sound = document.querySelector("#playing")
+

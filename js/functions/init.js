@@ -9,7 +9,7 @@ import Character from '../class/characterClass'
 // Import of functions
 import Animate from './animate'
 import CountMeter from './countMeter'
-
+import Music from './music'
 
 // Variable relative to the function
 let touchStart
@@ -78,10 +78,13 @@ export default function init(character, canvasWidth,ctx) {
         }
     })
 
-    // Set the counters and initialize them
+    // Set important variables and functions
     window.coins = 0
     window.speed = 4
+    window.dead = false
+    window.music = document.querySelector('.'+Characters[window.choosenCharacter].name)
     display()
+    Music(window.music)
     window.countMeter = CountMeter()
 }
 
@@ -90,5 +93,5 @@ function display() {
 
     requestAnimationFrame(display)
 
-    Animate(Characters[0], Levels[0][random], grounds, Levels[1][0], window.canvasWidth)
+    Animate(Characters[window.choosenCharacter], Levels[0][random], grounds, Levels[1][0], window.canvasWidth)
 }

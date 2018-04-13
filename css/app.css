@@ -43,7 +43,7 @@
       font-size: 20px;
       color: white;
       animation: slideUp 2s; }
-    #app .start .character {
+    #app .start .characters {
       display: flex;
       justify-content: space-around;
       align-items: center;
@@ -52,22 +52,36 @@
       bottom: 10px;
       left: 50%;
       transform: translateX(-50%); }
-      #app .start .character span {
+      #app .start .characters span {
+        position: relative;
         display: inline-block;
         width: 79px;
         height: 79px;
         line-height: 100px;
         text-align: center;
         animation: slideUpCharac 2s; }
-        #app .start .character span img {
+        #app .start .characters span img {
           width: 60px; }
-      #app .start .character span:hover {
+        #app .start .characters span .unlock {
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          position: absolute;
+          bottom: -30px; }
+          #app .start .characters span .unlock img {
+            width: 20px;
+            height: 20px; }
+          #app .start .characters span .unlock div {
+            color: white;
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif; }
+      #app .start .characters span:hover:not(.unlock) {
         width: 75px;
         height: 75px;
         line-height: 96px;
         cursor: pointer;
         border: 2px solid white; }
-      #app .start .character .selected {
+      #app .start .characters .selected {
         width: 75px;
         height: 75px;
         line-height: 96px;
@@ -86,6 +100,12 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%); }
+    #app .gameover div {
+      display: flex;
+      justify-content: space-between;
+      width: 60%;
+      margin: auto;
+      cursor: pointer; }
   #app canvas {
     border: 2px solid black; }
   #app .countMeter {

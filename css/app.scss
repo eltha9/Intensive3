@@ -3,117 +3,109 @@
     height: 379px;
     margin: auto;
     position: relative;
-
-    .start{
-        
+    .start {
         width: 100%;
         height: 100%;
-
         position: absolute;
         left: 0;
         top: 0;
-
         z-index: 100;
-
-        .background{
+        .background {
             width: 100%;
             height: 100%;
         }
-
-        .title{
-
+        .title {
             width: 40%;
             height: auto;
-
             position: absolute;
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
-
             animation: slideUp 1s;
         }
-
-        .playBtn{
-
+        .playBtn {
             display: inline-block;
-
             position: absolute;
             top: 170px;
             left: 50%;
             transform: translateX(-50%);
-
             font-family: Arial, Helvetica, sans-serif;
             font-size: 50px;
             font-weight: bold;
             color: white;
-
             cursor: pointer;
-
             animation: slideUp 1s;
         }
-
-        .choose{
-        
+        .choose {
             display: inline-block;
-
             position: absolute;
             top: 240px;
             left: 50%;
             transform: translateX(-50%);
-
             font-family: Arial, Helvetica, sans-serif;
             font-size: 20px;
             color: white;
-
             animation: slideUp 2s;
         }
-
-        .character{
+        .characters {
             display: flex;
             justify-content: space-around;
             align-items: center;
             width: 100%;
-
             position: absolute;
             bottom: 10px;
             left: 50%;
             transform: translateX(-50%);
-
-            span{
+            span {
+                position: relative;
                 display: inline-block;
                 width: 79px;
                 height: 79px;
-
                 line-height: 100px;
                 text-align: center;
-
                 animation: slideUpCharac 2s;
-                img{
+                img {
                     width: 60px;
                 }
-            }
 
-            span:hover{
+                .unlock{
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    position: absolute;
+                    bottom: -30px;
+
+                    img{
+                        width: 20px;
+                        height: 20px;
+                    }
+
+                    div{
+                        color: white;
+                        font-size: 25px;
+                        font-family: Arial, Helvetica, sans-serif
+                    }
+                }
+
+            }
+            span:hover:not(.unlock) {
                 width: 75px;
                 height: 75px;
                 line-height: 96px;
                 cursor: pointer;
                 border: 2px solid white;
             }
-
-            .selected{
+            .selected {
                 width: 75px;
                 height: 75px;
                 line-height: 96px;
                 cursor: pointer;
                 border: 2px solid white;
             }
-            
         }
     }
-
     .gameover {
-
         width: calc(667px / 2);
         height: 200px;
         background-color: black;
@@ -126,13 +118,21 @@
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
+
+        div{
+            display: flex;
+            justify-content: space-between;
+
+            width: 60%;
+            margin: auto;
+
+            cursor: pointer;
+        }
     }
     canvas {
-
         border: 2px solid black;
     }
     .countMeter {
-
         width: 100px;
         height: 50px;
         position: absolute;
@@ -144,23 +144,18 @@
         font-weight: bold;
         color: white;
     }
-
     .countCoins {
-
         width: 100px;
         height: 50px;
         position: absolute;
         left: 10px;
         top: 10px;
-
         line-height: 50px;
         font-family: Arial, Helvetica, sans-serif;
         font-size: 25px;
         font-weight: bold;
         color: white;
-
-        img{
-
+        img {
             width: 30px;
             height: 30px;
         }
@@ -168,22 +163,22 @@
 }
 
 @keyframes slideUp {
-    from{
+    from {
         transform: translateY(20px) translateX(-50%);
         opacity: 0;
     }
-    to{
+    to {
         transform: translateY(0) translateX(-50%);
         opacity: 1;
     }
 }
 
 @keyframes slideUpCharac {
-    from{
+    from {
         transform: translateY(20px);
         opacity: 0;
     }
-    to{
+    to {
         transform: translateY(0);
         opacity: 1;
     }
