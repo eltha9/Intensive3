@@ -1,8 +1,78 @@
 #app {
-  width: 667px;
-  height: 350px;
+  width: 671px;
+  height: 379px;
   margin: auto;
   position: relative; }
+  #app .start {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100; }
+    #app .start .background {
+      width: 100%;
+      height: 100%; }
+    #app .start .title {
+      width: 40%;
+      height: auto;
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: slideUp 1s; }
+    #app .start .playBtn {
+      display: inline-block;
+      position: absolute;
+      top: 170px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 50px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+      animation: slideUp 1s; }
+    #app .start .choose {
+      display: inline-block;
+      position: absolute;
+      top: 240px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 20px;
+      color: white;
+      animation: slideUp 2s; }
+    #app .start .character {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%); }
+      #app .start .character span {
+        display: inline-block;
+        width: 79px;
+        height: 79px;
+        line-height: 100px;
+        text-align: center;
+        animation: slideUpCharac 2s; }
+        #app .start .character span img {
+          width: 60px; }
+      #app .start .character span:hover {
+        width: 75px;
+        height: 75px;
+        line-height: 96px;
+        cursor: pointer;
+        border: 2px solid white; }
+      #app .start .character .selected {
+        width: 75px;
+        height: 75px;
+        line-height: 96px;
+        cursor: pointer;
+        border: 2px solid white; }
   #app .gameover {
     width: calc(667px / 2);
     height: 200px;
@@ -43,3 +113,19 @@
     #app .countCoins img {
       width: 30px;
       height: 30px; }
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px) translateX(-50%);
+    opacity: 0; }
+  to {
+    transform: translateY(0) translateX(-50%);
+    opacity: 1; } }
+
+@keyframes slideUpCharac {
+  from {
+    transform: translateY(20px);
+    opacity: 0; }
+  to {
+    transform: translateY(0);
+    opacity: 1; } }

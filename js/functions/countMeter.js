@@ -23,7 +23,7 @@ export default function () {
         }
 
         // Change the background every 100m
-        if (meter % 100 == 0) {
+        if (meter % 50 == 0) {
             let randomNumber =  Math.floor(Math.random() * Levels[0].length)
 
             if (randomNumber == window.random) {

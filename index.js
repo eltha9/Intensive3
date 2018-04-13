@@ -11,4 +11,4 @@ import Canvas from './js/functions/canvas'
 
 
 // Init the game with the player character choice
-Init(Characters[0], Canvas.canvasWidth, Canvas.ctx)
+// Init(Characters[0], Canvas.canvasWidth, Canvas.ctx)

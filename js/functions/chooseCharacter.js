@@ -1,0 +1,1 @@
+const characters = document.querySelector('.character')
